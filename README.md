@@ -2,7 +2,7 @@
 
 Bam to pairs conversion module for Hi-C data, based on samtools, bgzip and pairix.
 * Input : any paired-end bam file
-* Output : a chromosome-block-sorted and bgzipped pairs pairs file that contains all the mapped read pairs in the bam file, along with its index (.gz and .gz.px2)
+* Output : a chromosome-block-sorted and bgzipped pairs pairs file that contains all the mapped read pairs in the bam file, along with its index (.bsorted.pairs.gz and .bsorted.pairs.gz.px2)
 
 ## Building docker image
 The corresponding docker image can be rebuilt as follows:
