@@ -20,9 +20,9 @@ cd ..
 
 
 ## SOFTWARE: bam2pairs
-## COMMIT: f9e1c21adbc33a1eef07ff82087a2576b2029c42
+## COMMIT: 70eb8fe7ebe6c7d837d47206745a93a91e09fb39
 git clone https://github.com/4dn-dcic/bam2pairs
 cd bam2pairs
-git checkout f9e1c21adbc33a1eef07ff82087a2576b2029c42
+git checkout 70eb8fe7ebe6c7d837d47206745a93a91e09fb39
 cd ..
 
