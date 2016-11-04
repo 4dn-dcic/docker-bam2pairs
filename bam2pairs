@@ -1,5 +1,7 @@
 #!/bin/sh
-
+# This script creates a Uc pairs file that contains all the mapped reads in the input bam file.
+# output is bgzipped and pairix-indexed.
+ 
 input_bam=$1
 prefix=$2
 echo "#sort: chromosome-block" > $prefix.pairs
@@ -8,9 +10,8 @@ echo "#column2: chr1" >> $prefix.pairs
 echo "#column3: pos1" >> $prefix.pairs
 echo "#column4: chr2" >> $prefix.pairs
 echo "#column5: pos2" >> $prefix.pairs
-echo "#column6: flag" >> $prefix.pairs ## will convert to strands later..
-samtools view -X -F12 $input_bam | cut -f1,3,4,7,8,2 | sort -k2,2 -k4,4 -k3,3g -5,5g >> $prefix.bsorted.pairs
-bgzip $prefix.bsorted.pairs
-pairix $prefix.bsorted.pairs.gz
+samtools view -F12 $input_bam | perl -ne '@x=(split/\t/)[0,2,3,6,7,1];if($x[3]eq"="){$x[3]=$x[1];};if($x[5]&16){$s1="-";}else{$s1="+";};if($x[5]&32){$s2="-";}else{$s2="+"};pop @x;$"="\t";print "@x\t$s1\t$s2\n"' | awk '$2<$4 || $2==$4 && $3<$5' | sort -k2,2 -k4,4 -k3,3g -k5,5g >> $prefix.bsorted.pairs
+bgzip -f $prefix.bsorted.pairs
+pairix -f -s2 -d4 -b3 -e3 -u5 $prefix.bsorted.pairs.gz
 
 
