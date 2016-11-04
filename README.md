@@ -19,5 +19,5 @@ Run the following in the container.
 ```
 run.sh <input_bam> <output_prefix>
 # input_bam : input bam file.
-# output_prefix : prefix of the output bam file.
+# output_prefix : prefix of the output pairs file.
 ```
