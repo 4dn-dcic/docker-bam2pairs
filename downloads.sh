@@ -11,18 +11,18 @@ ln -s samtools-1.2 samtools
 
 
 ## SOFTWARE: pairix
-## COMMIT: 8b2dd72d57301bba008fd25467128fea568a4ea
-git clone https://github.com/hms-dbmi/pairix 
-cd pairix
-git checkout 8b2dd72d57301bba008fd25467128fea568a4eab
+## VERSION: 0.1.0
+wget https://github.com/4dn-dcic/pairix/archive/0.1.0.tar.gz
+tar -xzf 0.1.0.tar.gz
+cd pairix-0.1.0
 make
 cd ..
+ln -s pairix-0.1.0 pairix
 
 
 ## SOFTWARE: bam2pairs
-## COMMIT: 70eb8fe7ebe6c7d837d47206745a93a91e09fb39
-git clone https://github.com/4dn-dcic/bam2pairs
-cd bam2pairs
-git checkout 70eb8fe7ebe6c7d837d47206745a93a91e09fb39
-cd ..
+## VERSION: 0.0.2
+wget https://github.com/4dn-dcic/bam2pairs/archive/0.0.2.tar.gz
+tar -xzf 0.0.2.tar.gz
+ln -s bam2pairs-0.0.2 bam2pairs
 

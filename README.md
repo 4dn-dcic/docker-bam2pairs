@@ -5,7 +5,7 @@ Bam to pairs conversion module for Hi-C data, based on samtools, bgzip and pairi
 * Input : any paired-end bam file
 * Output : a chromosome-block-sorted and bgzipped pairs pairs file that contains all the mapped read pairs in the bam file, along with its index (.bsorted.pairs.gz and .bsorted.pairs.gz.px2)
 
-This repo contains the source files for a docker image stored in duplexa/bam2pairs:v1. (we will change the docker hub account soon)
+This repo contains the source files for a docker image stored in duplexa/bam2pairs:v2. (we will change the docker hub account soon)
 
 
 ## Cloning the repo
@@ -20,10 +20,10 @@ The `downloads.sh` file also contains comment lines that specifies the name and 
 
 
 ## Building docker image
-You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/bam2pairs:v1 with your desired docker repo name. You need permission to push to duplexa/bam2pairs:v1.
+You need docker daemon to rebuild the docker image. If you want to push it to a different docker repo, replace duplexa/bam2pairs:v2 with your desired docker repo name. You need permission to push to duplexa/bam2pairs:v2.
 ```
-docker build -t duplexa/bam2pairs:v1 .
-docker push duplexa/bam2pairs:v1
+docker build -t duplexa/bam2pairs:v2 .
+docker push duplexa/bam2pairs:v2
 ```
 
 ## Usage
